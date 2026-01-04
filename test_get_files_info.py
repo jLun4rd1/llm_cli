@@ -11,8 +11,11 @@ def run_get_files_info(working_dir, target_dir):
 
 def main():
     run_get_files_info("calculator", ".")
+    print("-----")
     run_get_files_info("calculator", "pkg")
+    print("-----")
     run_get_files_info("calculator", "/bin")
+    print("-----")
     run_get_files_info("calculator", "../")
 
 if __name__ == "__main__":
