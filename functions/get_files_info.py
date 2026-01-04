@@ -5,8 +5,8 @@ def get_files_info(working_directory, directory="."):
     try:
         wd_abs_path = os.path.abspath(working_directory)
         target_dir = os.path.normpath(os.path.join(wd_abs_path, directory))
-        valid_target_dir = os.path.commonpath([wd_abs_path, target_dir]) == wd_abs_path
 
+        valid_target_dir = os.path.commonpath([wd_abs_path, target_dir]) == wd_abs_path
         if not valid_target_dir:
             return f'    Error: Cannot list "{directory}" as it is outside the permitted working directory'
 
@@ -20,6 +20,6 @@ def get_files_info(working_directory, directory="."):
             file_metadata.append(f"    - {file}: file_size={file_size} bytes, is_dir={is_dir}")
 
     except Exception as e:
-        return f"    Error: {e}"
+        return f"Error: getting file's metadata: {e}"
 
     return "\n".join(file_metadata)

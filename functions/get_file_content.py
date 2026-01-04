@@ -5,6 +5,7 @@ def get_file_content(working_directory, file_path):
     try:
         wd_abs_path = os.path.abspath(working_directory)
         target_file = os.path.normpath(os.path.join(wd_abs_path, file_path))
+
         valid_target_file = os.path.commonpath([wd_abs_path, target_file]) == wd_abs_path
         if not valid_target_file:
             return f'    Error: Cannot read "{file_path}" as it is outside the permitted working directory'
@@ -20,6 +21,6 @@ def get_file_content(working_directory, file_path):
                 file_content_str += truncate_message
 
     except Exception as e:
-        return f"Error: {e}"
+        return f"Error: getting contents from file: {e}"
 
     return file_content_str
