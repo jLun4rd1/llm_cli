@@ -2,8 +2,7 @@ from config import MAX_CHARS
 from functions.get_file_content import get_file_content
 
 def run_get_file_content(working_dir, target_file):
-    result_text = f"Result for '{target_file}' file:"
-    print(result_text)
+    print(f"Result for '{target_file}' file:")
 
     file_content = get_file_content(working_dir, target_file)
 
