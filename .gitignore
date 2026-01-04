@@ -11,3 +11,6 @@ wheels/
 
 # Environments
 .env
+
+# Unimportant .txt files
+morelorem.txt
